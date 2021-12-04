@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.jsx"
+const { title = '' } = Astro.props;
 ---
 
 <html lang="en" class="dark">
@@ -7,12 +8,15 @@ import Header from "../components/Header.jsx"
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> Welcome to my Website</title>
+  <title> {title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.ico">
   <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
 </head>
-
-<body class="bg-lightDark">
-	<Header />
+<body>
+    <div class="w-full h-full dark:bg-lightDark bg-white">
+        <Header client:load />
+        <!-- slot: your page content will be injected here. -->
+        <slot />
+    </div>
 </body>
 </html>

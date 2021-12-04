@@ -1,0 +1,16 @@
+/* Menu */
+
+.desktop-list {
+    height: 7.25rem; 
+    padding: 1rem 2rem 1rem 8.5rem;
+}
+.desktop-list a::before {
+    background-color: #fff;
+    width: calc(100% - 8.5rem);
+    content: "";
+    height: 3px;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    transition: all .2s cubic-bezier(.76,0,.24,1);
+}

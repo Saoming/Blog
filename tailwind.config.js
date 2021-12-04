@@ -2,11 +2,12 @@
 module.exports = {
   mode: 'jit',
   purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
-  darkMode: 'class',
+  darkMode: 'class',  
   // more options here
   theme: {
     extend: {
       colors: {
+        lightWhite: 'f0f0f0',
         lightDark: '#111',
         lightGray: '#2e2e2e'
       },
@@ -15,5 +16,10 @@ module.exports = {
       }
     },
   },
-
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+  ]
 };
