@@ -1,0 +1,33 @@
+---
+import Header from '../../components/Header.jsx';
+import { getAllPostWithSlugs, getPostBySlug } from '../../lib/api.js';
+
+export async function getStaticPaths() {
+
+  const postWithSlugs  = await getAllPostWithSlugs();
+  return postWithSlugs.edges.map(({ node }) => {
+    return {
+      params: { slug: node.slug },
+    };
+  });
+
+}
+const { slug } = Astro.request.params;
+const post = await getPostBySlug(slug);
+---
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> {post.title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+  <link rel="stylesheet" href={Astro.resolve('../../styles/global.css')}>
+</head>
+<body>
+    <div class="w-full h-full dark:bg-lightDark bg-white">
+        <Header client:load />
+    </div>
+    <div class="text-white ">{post.title}</div>
+</body>
+</html>
