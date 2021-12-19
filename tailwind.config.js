@@ -1,7 +1,6 @@
 // tailwind.config.cjs
 module.exports = {
-  mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
+  content: ['./public/**/*.html', './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
   darkMode: 'class',  
   // more options here
   theme: {
@@ -20,6 +19,5 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
   ]
 };

@@ -1,11 +1,20 @@
 ---
 import Layouts from "../layouts/BaseLayouts.astro";
+import SearchPost from "../components/SearchPost.jsx";
+
 export interface Props {
   title: string;
 }
 
-const { title = 'Samuel Tirtawidjaja Blog' } = Astro.props
-console.log();
+const { title = 'Samuel Tirtawidjaja Blog' } = Astro.props;
 ---
+
 <Layouts title={title}>
+  <div class="py-32 grid grid-cols-2">
+    <h1 class="text-lightDark dark:text-white text-6xl is-inview"><mark><span class="z-10">One Step</span></mark>, at a time</h1>
+
+    <div>
+      <SearchPost client:load  />
+    </div>
+  </div>
 </Layouts>

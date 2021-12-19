@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ModeSwitcherButton from './ModeSwitcherButton'
+import MenuButton from './MenuButton'
 
 export default function Header() {
     
@@ -13,21 +14,9 @@ export default function Header() {
         </div>
 
         <ul className="col-span-3 grid grid-cols-3">
-          <li className="desktop-list grid items-end border-r border-lightWhite dark:border-lightGray relative">
-            <a href="/" className="text-2xl font-normal dark:text-white dark:hover:text-white text-black">
-                Blog
-            </a>
-          </li>
-          <li className="desktop-list grid items-end border-r border-lightWhite dark:border-lightGray relative">
-            <a href="/works" className="text-2xl font-normal dark:text-white dark:hover:text-white text-black">
-                Works
-            </a>
-          </li>
-          <li className="desktop-list grid items-end border-r border-lightWhite dark:border-lightGray relative">
-            <a href="/blog" className=" text-2xl font-normal dark:text-white dark:hover:text-white text-black">
-                Bio
-            </a>
-          </li>
+          <MenuButton link="/" > Blog </MenuButton>
+          <MenuButton link="/works" > Works </MenuButton>
+          <MenuButton link="/bio" > Bio </MenuButton>
         </ul>
 
         {/* Button to change the dark and light mode */}
@@ -36,7 +25,6 @@ export default function Header() {
               <ModeSwitcherButton />
             </div>
         </div>
-
       </nav>
     </header>
   )

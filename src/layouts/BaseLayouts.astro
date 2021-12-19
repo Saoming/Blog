@@ -16,7 +16,9 @@ const { title = '' } = Astro.props;
     <div class="w-full h-full dark:bg-lightDark bg-white">
         <Header client:load />
         <!-- slot: your page content will be injected here. -->
-        <slot />
+        <main class="px-16">
+          <slot />
+        </main>
     </div>
 </body>
 </html>

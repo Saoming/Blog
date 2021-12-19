@@ -11,9 +11,7 @@ body {
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    @apply antialiased;
+    @apply antialiased box-border outline-0;
 }
   
 :root {
@@ -22,7 +20,27 @@ body {
     --user-font-scale: 1rem - 16px;
     font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
 }
- 
+
+mark {
+    @apply bg-transparent relative text-inherit;
+}
+
+.is-inview mark:before {
+    @apply w-full
+}
+
+mark:before {
+    content: "";
+    background-color: #efe960;
+    width: 0%;
+    height: 20%;
+    position: absolute;
+    left: 0;
+    bottom: 22%;
+    transform: rotate(-1deg);
+    transition: width .6s cubic-bezier(.37,.31,0,1) calc(.2s + 0.6s),background-color .2s ease-in-out;
+    opacity: .6;
+}
 
 /* Menu */
 

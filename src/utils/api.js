@@ -45,3 +45,16 @@ export async function getAllPostWithSlugs() {
     return data?.posts;
 }
 
+// export async function getBioPage() {
+//   const data = await fetchAPI(`
+  
+//   `)
+//   return data?bio;
+// }
+
+// export async function getWorksPage() {
+//   const data = await fetchAPI(`
+  
+//   `)
+//   return data?bio;
+// }
